@@ -76,12 +76,12 @@
         </div>
     </div>
 
+    <!-- Debug Panel (remove in production) -->
+    <div style="position: fixed; top: 10px; right: 10px; background: rgba(0,0,0,0.8); color: white; padding: 10px; border-radius: 5px; font-size: 12px; z-index: 1000; display: block;" id="debugPanel">
+        <button onclick="testSendMessage()" style="background: #A2190A; color: white; border: none; padding: 5px 10px; border-radius: 3px; cursor: pointer;">Test Send</button>
+        <div>Console: Open F12 to see logs</div>
+    </div>
+
     <script src="script.js"></script>
-    
-    <!-- Debug info - remove in production -->
-    <script>
-        console.log('Page loaded. Try typing in the input and pressing Enter or clicking Send.');
-        console.log('If issues persist, check browser console for errors.');
-    </script>
 </body>
 </html>

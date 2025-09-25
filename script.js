@@ -117,21 +117,38 @@ function createMessageElement(message) {
 
 // Function to render all messages
 function renderMessages() {
+    console.log('renderMessages called');
     const messagesList = document.getElementById('messagesList');
+    
+    if (!messagesList) {
+        console.error('Messages list element not found!');
+        return;
+    }
+    
+    console.log('Clearing messages list');
     messagesList.innerHTML = '';
 
-    chatMessages.forEach(message => {
+    console.log('Rendering', chatMessages.length, 'messages');
+    chatMessages.forEach((message, index) => {
+        console.log(`Rendering message ${index + 1}:`, message);
         const messageElement = createMessageElement(message);
         messagesList.appendChild(messageElement);
     });
 
     // Scroll to bottom
     const messagesContainer = document.querySelector('.messages-container');
-    messagesContainer.scrollTop = messagesContainer.scrollHeight;
+    if (messagesContainer) {
+        messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        console.log('Scrolled to bottom');
+    } else {
+        console.error('Messages container not found for scrolling');
+    }
 }
 
 // Function to add a new message
 function addMessage(text, isOwn = true) {
+    console.log('addMessage called with:', text, isOwn);
+    
     const now = new Date();
     const time = now.toLocaleTimeString('en-US', { 
         hour: 'numeric', 
@@ -148,39 +165,82 @@ function addMessage(text, isOwn = true) {
         hasReadReceipt: isOwn
     };
 
+    console.log('New message created:', newMessage);
     chatMessages.push(newMessage);
     
     // Re-render messages
     renderMessages();
+    console.log('Messages re-rendered');
 }
 
 // Function to handle sending message
 function sendMessage() {
+    console.log('sendMessage function called');
     const messageInput = document.getElementById('messageInput');
+    console.log('messageInput:', messageInput);
+    
+    if (!messageInput) {
+        console.error('Message input element not found!');
+        return;
+    }
+    
     const messageText = messageInput.value.trim();
+    console.log('messageText:', messageText);
 
     if (messageText !== '') {
         addMessage(messageText);
         messageInput.value = '';
+        console.log('Message added and input cleared');
+    } else {
+        console.log('Message text is empty');
     }
 }
 
 // Event listeners
 document.addEventListener('DOMContentLoaded', function() {
+    console.log('DOM Content Loaded');
+    
     // Render initial messages
     renderMessages();
 
     // Send button click
     const sendButton = document.getElementById('sendButton');
-    sendButton.addEventListener('click', sendMessage);
+    console.log('sendButton:', sendButton);
+    
+    if (sendButton) {
+        sendButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            console.log('Send button clicked');
+            sendMessage();
+        });
+    } else {
+        console.error('Send button not found!');
+    }
 
     // Enter key press in input
     const messageInput = document.getElementById('messageInput');
-    messageInput.addEventListener('keypress', function(e) {
-        if (e.key === 'Enter') {
-            sendMessage();
-        }
-    });
+    console.log('messageInput:', messageInput);
+    
+    if (messageInput) {
+        messageInput.addEventListener('keypress', function(e) {
+            console.log('Key pressed:', e.key);
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                console.log('Enter key pressed');
+                sendMessage();
+            }
+        });
+        
+        // Also add keydown event for better compatibility
+        messageInput.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                sendMessage();
+            }
+        });
+    } else {
+        console.error('Message input not found!');
+    }
 
     // Back button click
     const backButton = document.querySelector('.back-button');
@@ -233,3 +293,12 @@ setInterval(() => {
         simulateIncomingMessage();
     }
 }, 20000); // Every 20 seconds
+
+// Test function to verify everything is working
+function testSendMessage() {
+    console.log('Test function called');
+    addMessage('Test message from script!');
+}
+
+// Add a global test function
+window.testSendMessage = testSendMessage;

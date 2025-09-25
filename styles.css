@@ -232,7 +232,6 @@ body {
     flex-direction: column;
     width: 100%;
     padding: 8.5px 8px;
-    transform: matrix(-1, 0, 0, 1, 0, 0);
 }
 
 .message-sender {
@@ -242,7 +241,6 @@ body {
     line-height: 18px;
     color: #2C2C2E;
     margin-bottom: 4px;
-    transform: matrix(-1, 0, 0, 1, 0, 0);
 }
 
 .message-body {
@@ -250,7 +248,6 @@ body {
     justify-content: space-between;
     align-items: flex-end;
     gap: 8px;
-    transform: matrix(-1, 0, 0, 1, 0, 0);
 }
 
 .message-text {
@@ -273,7 +270,7 @@ body {
 }
 
 .message-group.own .message-content {
-    transform: matrix(-1, 0, 0, 1, 0, 0);
+    padding: 8.5px 8px;
 }
 
 .message-group.own .message-sender {
@@ -281,15 +278,18 @@ body {
 }
 
 .message-group.own .message-body {
-    transform: matrix(-1, 0, 0, 1, 0, 0);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 8px;
 }
 
 .message-group.own .message-text {
-    transform: matrix(-1, 0, 0, 1, 0, 0);
+    color: #FFFFFF;
 }
 
 .message-group.own .message-time {
-    transform: matrix(-1, 0, 0, 1, 0, 0);
+    color: #FFFFFF;
     display: flex;
     align-items: center;
     gap: 4px;
@@ -391,10 +391,16 @@ body {
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
+    z-index: 10;
+    position: relative;
 }
 
 .send-button:hover {
     background: #8A1508;
+}
+
+.send-button:active {
+    transform: scale(0.95);
 }
 
 /* Responsive adjustments */
