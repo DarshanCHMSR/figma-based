@@ -1,256 +1,508 @@
-<!DOCTYPE html><!DOCTYPE html>
+<!DOCTYPE html><!DOCTYPE html><!DOCTYPE html>
 
-<html lang="en"><html lang="en">
+<html lang="en">
 
-<head><head>
+<head><html lang="en"><html lang="en">
 
-    <meta charset="UTF-8">    <meta charset="UTF-8">
+    <meta charset="UTF-8">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><head><head>
 
-    <title>Login - Fun Friday Group</title>    <title>Login - Fun Friday Group</title>
+    <title>Login - Fun Friday Group</title>
 
-    <link rel="stylesheet" href="styles.css">    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@700&family=Manrope:wght@400;500&family=Inter:wght@400&family=SF+Pro+Text:wght@600&display=swap" rel="stylesheet">    <meta charset="UTF-8">    <meta charset="UTF-8">
 
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@700&family=Manrope:wght@400;500&family=Inter:wght@400&family=SF+Pro+Text:wght@600&display=swap" rel="stylesheet">    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@700&family=Manrope:wght@400;500&family=Inter:wght@400&family=SF+Pro+Text:wght@600&display=swap" rel="stylesheet">
+    <style>
 
-    <style>    <style>
+        * {    <meta name="viewport" content="width=device-width, initial-scale=1.0">    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        .login-container {        .login-container {
+            margin: 0;
 
-            display: flex;            display: flex;
+            padding: 0;    <title>Login - Fun Friday Group</title>    <title>Login - Fun Friday Group</title>
 
-            justify-content: center;            justify-content: center;
+            box-sizing: border-box;
 
-            align-items: center;            align-items: center;
+        }    <link rel="stylesheet" href="styles.css">    <link rel="stylesheet" href="styles.css">
 
-            min-height: 100vh;            min-height: 100vh;
 
-            background: linear-gradient(135deg, #A2190A 0%, #8A1508 100%);            background: linear-gradient(135deg, #A2190A 0%, #8A1508 100%);
 
-            padding: 20px;            padding: 20px;
+        body {    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@700&family=Manrope:wght@400;500&family=Inter:wght@400&family=SF+Pro+Text:wght@600&display=swap" rel="stylesheet">    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@700&family=Manrope:wght@400;500&family=Inter:wght@400&family=SF+Pro+Text:wght@600&display=swap" rel="stylesheet">
+
+            font-family: 'Manrope', sans-serif;
+
+            background: linear-gradient(135deg, #A2190A 0%, #8A1508 100%);    <style>    <style>
+
+            min-height: 100vh;
+
+            display: flex;        .login-container {        .login-container {
+
+            align-items: center;
+
+            justify-content: center;            display: flex;            display: flex;
+
+            padding: 20px;
+
+        }            justify-content: center;            justify-content: center;
+
+
+
+        .login-container {            align-items: center;            align-items: center;
+
+            background: white;
+
+            border-radius: 20px;            min-height: 100vh;            min-height: 100vh;
+
+            padding: 40px;
+
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);            background: linear-gradient(135deg, #A2190A 0%, #8A1508 100%);            background: linear-gradient(135deg, #A2190A 0%, #8A1508 100%);
+
+            width: 100%;
+
+            max-width: 400px;            padding: 20px;            padding: 20px;
+
+        }
 
         }        }
 
+        .login-header {
 
+            text-align: center;
 
-        .login-card {        .login-card {
+            margin-bottom: 30px;
 
-            background: white;            background: white;
-
-            border-radius: 20px;            border-radius: 20px;
-
-            padding: 40px;            padding: 40px;
-
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-
-            width: 100%;            width: 100%;
-
-            max-width: 400px;            max-width: 400px;
-
-        }        }
+        }        .login-card {        .login-card {
 
 
 
-        .login-header {        .login-header {
+        .login-header h1 {            background: white;            background: white;
 
-            text-align: center;            text-align: center;
+            font-family: 'Quicksand', sans-serif;
 
-            margin-bottom: 30px;            margin-bottom: 30px;
+            font-weight: 700;            border-radius: 20px;            border-radius: 20px;
 
-        }        }
+            font-size: 28px;
+
+            color: #A2190A;            padding: 40px;            padding: 40px;
+
+            margin-bottom: 10px;
+
+        }            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
 
 
 
-        .login-header h1 {        .login-header h1 {
+        .login-header p {            width: 100%;            width: 100%;
 
-            font-family: 'Quicksand', sans-serif;            font-family: 'Quicksand', sans-serif;
+            font-family: 'Manrope', sans-serif;
 
-            font-weight: 700;            font-weight: 700;
+            color: #666668;            max-width: 400px;            max-width: 400px;
 
-            font-size: 28px;            font-size: 28px;
+            font-size: 16px;
 
-            color: #A2190A;            color: #A2190A;
+        }        }        }
+
+
+
+        .auth-tabs {
+
+            display: flex;
+
+            margin-bottom: 25px;        .login-header {        .login-header {
+
+            background: #F5F5F5;
+
+            border-radius: 12px;            text-align: center;            text-align: center;
+
+            padding: 4px;
+
+        }            margin-bottom: 30px;            margin-bottom: 30px;
+
+
+
+        .auth-tab {        }        }
+
+            flex: 1;
+
+            padding: 12px;
+
+            text-align: center;
+
+            background: transparent;        .login-header h1 {        .login-header h1 {
+
+            border: none;
+
+            border-radius: 8px;            font-family: 'Quicksand', sans-serif;            font-family: 'Quicksand', sans-serif;
+
+            font-family: 'SF Pro Text', sans-serif;
+
+            font-weight: 600;            font-weight: 700;            font-weight: 700;
+
+            font-size: 14px;
+
+            color: #666;            font-size: 28px;            font-size: 28px;
+
+            cursor: pointer;
+
+            transition: all 0.2s ease;            color: #A2190A;            color: #A2190A;
+
+        }
 
             margin-bottom: 10px;            margin-bottom: 10px;
 
-        }        }
+        .auth-tab.active {
 
+            background: white;        }        }
 
+            color: #A2190A;
+
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+        }
 
         .login-header p {        .login-header p {
 
-            font-family: 'Manrope', sans-serif;            font-family: 'Manrope', sans-serif;
+        .auth-form {
+
+            display: none;            font-family: 'Manrope', sans-serif;            font-family: 'Manrope', sans-serif;
+
+        }
 
             color: #666668;            color: #666668;
 
-            font-size: 16px;            font-size: 16px;
+        .auth-form.active {
+
+            display: block;            font-size: 16px;            font-size: 16px;
+
+        }
 
         }        }
 
+        .form-group {
 
+            margin-bottom: 20px;
+
+        }
 
         .form-group {        .form-group {
 
-            margin-bottom: 20px;            margin-bottom: 20px;
+        .form-group label {
 
-        }        }
+            display: block;            margin-bottom: 20px;            margin-bottom: 20px;
+
+            font-family: 'SF Pro Text', sans-serif;
+
+            font-weight: 600;        }        }
+
+            color: #333;
+
+            margin-bottom: 8px;
+
+            font-size: 14px;
+
+        }        .form-group label {        .form-group label {
 
 
 
-        .form-group label {        .form-group label {
+        .form-group input {            display: block;            display: block;
 
-            display: block;            display: block;
+            width: 100%;
 
-            font-family: 'SF Pro Text', sans-serif;            font-family: 'SF Pro Text', sans-serif;
+            padding: 12px 16px;            font-family: 'SF Pro Text', sans-serif;            font-family: 'SF Pro Text', sans-serif;
 
-            font-weight: 600;            font-weight: 600;
+            border: 2px solid #E8E8E8;
 
-            color: #333;            color: #333;
+            border-radius: 12px;            font-weight: 600;            font-weight: 600;
 
-            margin-bottom: 8px;            margin-bottom: 8px;
+            font-family: 'Inter', sans-serif;
+
+            font-size: 16px;            color: #333;            color: #333;
+
+            transition: border-color 0.2s ease;
+
+            box-sizing: border-box;            margin-bottom: 8px;            margin-bottom: 8px;
+
+        }
 
             font-size: 14px;            font-size: 14px;
 
-        }        }
+        .form-group input:focus {
+
+            outline: none;        }        }
+
+            border-color: #A2190A;
+
+        }
 
 
 
-        .form-group input {        .form-group input {
+        .submit-button {        .form-group input {        .form-group input {
 
-            width: 100%;            width: 100%;
+            width: 100%;
 
-            padding: 12px 16px;            padding: 12px 16px;
+            padding: 14px;            width: 100%;            width: 100%;
 
-            border: 2px solid #E8E8E8;            border: 2px solid #E8E8E8;
+            background: linear-gradient(135deg, #A2190A 0%, #8A1508 100%);
 
-            border-radius: 12px;            border-radius: 12px;
+            color: white;            padding: 12px 16px;            padding: 12px 16px;
 
-            font-family: 'Inter', sans-serif;            font-family: 'Inter', sans-serif;
+            border: none;
 
-            font-size: 16px;            font-size: 16px;
+            border-radius: 12px;            border: 2px solid #E8E8E8;            border: 2px solid #E8E8E8;
+
+            font-family: 'SF Pro Text', sans-serif;
+
+            font-weight: 600;            border-radius: 12px;            border-radius: 12px;
+
+            font-size: 16px;
+
+            cursor: pointer;            font-family: 'Inter', sans-serif;            font-family: 'Inter', sans-serif;
+
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+            margin-bottom: 15px;            font-size: 16px;            font-size: 16px;
+
+        }
 
             transition: border-color 0.2s ease;            transition: border-color 0.2s ease;
 
-            box-sizing: border-box;            box-sizing: border-box;
+        .submit-button:hover {
 
-        }        }
+            transform: translateY(-2px);            box-sizing: border-box;            box-sizing: border-box;
+
+            box-shadow: 0 8px 20px rgba(162, 25, 10, 0.3);
+
+        }        }        }
 
 
 
-        .form-group input:focus {        .form-group input:focus {
+        .submit-button:disabled {
 
-            outline: none;            outline: none;
+            opacity: 0.6;
+
+            cursor: not-allowed;        .form-group input:focus {        .form-group input:focus {
+
+            transform: none;
+
+            box-shadow: none;            outline: none;            outline: none;
+
+        }
 
             border-color: #A2190A;            border-color: #A2190A;
 
-        }        }
+        .auth-message {
+
+            padding: 12px 16px;        }        }
+
+            border-radius: 8px;
+
+            margin-bottom: 20px;
+
+            font-family: 'Manrope', sans-serif;
+
+            font-size: 14px;        .auth-tabs {        .auth-tabs {
+
+            text-align: center;
+
+        }            display: flex;            display: flex;
 
 
 
-        .auth-tabs {        .auth-tabs {
+        .auth-message.success {            margin-bottom: 25px;            margin-bottom: 25px;
 
-            display: flex;            display: flex;
+            background-color: #d4edda;
 
-            margin-bottom: 25px;            margin-bottom: 25px;
+            color: #155724;            background: #F5F5F5;            background: #F5F5F5;
 
-            background: #F5F5F5;            background: #F5F5F5;
+            border: 1px solid #c3e6cb;
 
-            border-radius: 12px;            border-radius: 12px;
-
-            padding: 4px;            padding: 4px;
-
-        }        }
+        }            border-radius: 12px;            border-radius: 12px;
 
 
 
-        .auth-tab {        .auth-tab {
+        .auth-message.error {            padding: 4px;            padding: 4px;
 
-            flex: 1;            flex: 1;
+            background-color: #f8d7da;
 
-            padding: 12px;            padding: 12px;
+            color: #721c24;        }        }
 
-            text-align: center;            text-align: center;
+            border: 1px solid #f5c6cb;
 
-            background: transparent;            background: transparent;
-
-            border: none;            border: none;
-
-            border-radius: 8px;            border-radius: 8px;
-
-            font-family: 'SF Pro Text', sans-serif;            font-family: 'SF Pro Text', sans-serif;
-
-            font-weight: 600;            font-weight: 600;
-
-            font-size: 14px;            font-size: 14px;
-
-            color: #666;            color: #666;
-
-            cursor: pointer;            cursor: pointer;
-
-            transition: all 0.2s ease;            transition: all 0.2s ease;
-
-        }        }
+        }
 
 
 
-        .auth-tab.active {        .auth-tab.active {
+        .auth-message.info {        .auth-tab {        .auth-tab {
 
-            background: white;            background: white;
+            background-color: #d1ecf1;
 
-            color: #A2190A;            color: #A2190A;
+            color: #0c5460;            flex: 1;            flex: 1;
 
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border: 1px solid #bee5eb;
 
-        }        }
-
-
-
-        .auth-form {        .auth-form {
-
-            display: none;            display: none;
-
-        }        }
+        }            padding: 12px;            padding: 12px;
 
 
 
-        .auth-form.active {        .auth-form.active {
+        .forgot-password {            text-align: center;            text-align: center;
 
-            display: block;            display: block;
+            text-align: center;
 
-        }        }
+            margin-top: 15px;            background: transparent;            background: transparent;
 
-
-
-        .submit-button {        .submit-button {
-
-            width: 100%;            width: 100%;
-
-            padding: 14px;            padding: 14px;
-
-            background: linear-gradient(135deg, #A2190A 0%, #8A1508 100%);            background: linear-gradient(135deg, #A2190A 0%, #8A1508 100%);
-
-            color: white;            color: white;
+        }
 
             border: none;            border: none;
 
-            border-radius: 12px;            border-radius: 12px;
+        .forgot-password a {
 
-            font-family: 'SF Pro Text', sans-serif;            font-family: 'SF Pro Text', sans-serif;
+            color: #A2190A;            border-radius: 8px;            border-radius: 8px;
 
-            font-weight: 600;            font-weight: 600;
+            text-decoration: none;
 
-            font-size: 16px;            font-size: 16px;
+            font-family: 'Manrope', sans-serif;            font-family: 'SF Pro Text', sans-serif;            font-family: 'SF Pro Text', sans-serif;
 
-            cursor: pointer;            cursor: pointer;
+            font-size: 14px;
 
-            transition: transform 0.2s ease, box-shadow 0.2s ease;            transition: transform 0.2s ease, box-shadow 0.2s ease;
-
-        }        }
+        }            font-weight: 600;            font-weight: 600;
 
 
 
-        .submit-button:hover {        .submit-button:hover {
+        .forgot-password a:hover {            font-size: 14px;            font-size: 14px;
+
+            text-decoration: underline;
+
+        }            color: #666;            color: #666;
+
+
+
+        @media (max-width: 480px) {            cursor: pointer;            cursor: pointer;
+
+            .login-container {
+
+                padding: 30px 20px;            transition: all 0.2s ease;            transition: all 0.2s ease;
+
+                margin: 10px;
+
+            }        }        }
+
+
+
+            .login-header h1 {
+
+                font-size: 24px;
+
+            }        .auth-tab.active {        .auth-tab.active {
+
+        }
+
+    </style>            background: white;            background: white;
+
+</head>
+
+<body>            color: #A2190A;            color: #A2190A;
+
+    <div class="login-container">
+
+        <div class="login-header">            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+            <h1>Welcome Back</h1>
+
+            <p>Sign in to continue to Fun Friday Group</p>        }        }
+
+        </div>
+
+
+
+        <div class="auth-tabs">
+
+            <button id="loginTab" class="auth-tab active">Login</button>        .auth-form {        .auth-form {
+
+            <button id="registerTab" class="auth-tab">Register</button>
+
+        </div>            display: none;            display: none;
+
+
+
+        <!-- Login Form -->        }        }
+
+        <form id="loginForm" class="auth-form active">
+
+            <div class="form-group">
+
+                <label for="loginUsername">Username</label>
+
+                <input type="text" id="loginUsername" name="username" placeholder="Enter your username" required>        .auth-form.active {        .auth-form.active {
+
+            </div>
+
+            <div class="form-group">            display: block;            display: block;
+
+                <label for="loginPassword">Password</label>
+
+                <input type="password" id="loginPassword" name="password" placeholder="Enter your password" required>        }        }
+
+            </div>
+
+            <button type="submit" class="submit-button">Login</button>
+
+            <div class="forgot-password">
+
+                <a href="#">Forgot Password?</a>        .submit-button {        .submit-button {
+
+            </div>
+
+        </form>            width: 100%;            width: 100%;
+
+
+
+        <!-- Register Form -->            padding: 14px;            padding: 14px;
+
+        <form id="registerForm" class="auth-form">
+
+            <div class="form-group">            background: linear-gradient(135deg, #A2190A 0%, #8A1508 100%);            background: linear-gradient(135deg, #A2190A 0%, #8A1508 100%);
+
+                <label for="registerUsername">Username</label>
+
+                <input type="text" id="registerUsername" name="username" placeholder="Enter your username" required>            color: white;            color: white;
+
+            </div>
+
+            <div class="form-group">            border: none;            border: none;
+
+                <label for="registerEmail">Email</label>
+
+                <input type="email" id="registerEmail" name="email" placeholder="Enter your email" required>            border-radius: 12px;            border-radius: 12px;
+
+            </div>
+
+            <div class="form-group">            font-family: 'SF Pro Text', sans-serif;            font-family: 'SF Pro Text', sans-serif;
+
+                <label for="registerPassword">Password</label>
+
+                <input type="password" id="registerPassword" name="password" placeholder="Enter your password" required>            font-weight: 600;            font-weight: 600;
+
+            </div>
+
+            <div class="form-group">            font-size: 16px;            font-size: 16px;
+
+                <label for="confirmPassword">Confirm Password</label>
+
+                <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm your password" required>            cursor: pointer;            cursor: pointer;
+
+            </div>
+
+            <button type="submit" class="submit-button">Register</button>            transition: transform 0.2s ease, box-shadow 0.2s ease;            transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+        </form>
+
+    </div>        }        }
+
+
+
+    <script src="login-vercel.js"></script>
+
+</body>
+
+</html>        .submit-button:hover {        .submit-button:hover {
 
             transform: translateY(-2px);            transform: translateY(-2px);
 
