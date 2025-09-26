@@ -112,6 +112,20 @@ io.on('connection', (socket) => {
         try {
             console.log('📨 Message received:', messageData);
 
+            // Validate message data
+            const messageContent = messageData.text || messageData.content;
+            if (!messageContent || messageContent.trim() === '') {
+                console.log('❌ Empty message content received');
+                socket.emit('message-error', { error: 'Message content cannot be empty' });
+                return;
+            }
+
+            if (!messageData.senderId) {
+                console.log('❌ No sender ID provided');
+                socket.emit('message-error', { error: 'Sender ID is required' });
+                return;
+            }
+
             // Save message to database
             const result = await dbConnection.query(`
                 INSERT INTO messages (room_id, sender_id, content, message_type) 
@@ -119,7 +133,7 @@ io.on('connection', (socket) => {
             `, [
                 messageData.roomId || 1,
                 messageData.senderId,
-                messageData.content,
+                messageContent.trim(),
                 messageData.type || 'text'
             ]);
 
@@ -133,7 +147,7 @@ io.on('connection', (socket) => {
                 id: result.insertId,
                 room_id: messageData.roomId || 1,
                 sender_id: messageData.senderId,
-                content: messageData.content,
+                content: messageContent.trim(),
                 message_type: messageData.type || 'text',
                 created_at: new Date().toISOString(),
                 sender: sender[0] || { username: 'Unknown', display_name: 'Unknown User' }

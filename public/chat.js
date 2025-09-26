@@ -215,9 +215,26 @@ class ChatApp {
             // Add avatar for other users
             const avatar = document.createElement('div');
             avatar.className = 'avatar';
-            if (message.sender_avatar) {
-                avatar.style.backgroundImage = `url(${message.sender_avatar})`;
-            }
+            
+            // Generate initials from username
+            const senderName = message.sender?.display_name || message.sender?.username || message.sender_username || 'U';
+            const initials = this.generateInitials(senderName);
+            avatar.textContent = initials;
+            
+            // Set random gradient color based on username
+            const colors = [
+                'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+                'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
+                'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)',
+                'linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)',
+                'linear-gradient(135deg, #fa709a 0%, #fee140 100%)',
+                'linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)',
+                'linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%)',
+                'linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%)'
+            ];
+            const colorIndex = this.hashCode(senderName) % colors.length;
+            avatar.style.background = colors[colorIndex];
+            
             messageGroup.appendChild(avatar);
         }
 
@@ -232,7 +249,7 @@ class ChatApp {
         if (!isOwn) {
             const senderElement = document.createElement('div');
             senderElement.className = 'message-sender';
-            senderElement.textContent = message.sender_username;
+            senderElement.textContent = message.sender?.display_name || message.sender?.username || message.sender_username;
             messageContent.appendChild(senderElement);
         }
 
@@ -243,7 +260,7 @@ class ChatApp {
         // Message text
         const messageText = document.createElement('div');
         messageText.className = 'message-text';
-        messageText.textContent = message.message_text;
+        messageText.textContent = message.content || message.message_text;
 
         // Message time
         const messageTime = document.createElement('div');
@@ -391,6 +408,28 @@ class ChatApp {
         } catch (error) {
             console.error('Logout failed:', error);
         }
+    }
+
+    // Helper function to generate initials from name
+    generateInitials(name) {
+        if (!name) return 'U';
+        const words = name.trim().split(' ');
+        if (words.length === 1) {
+            return words[0].substring(0, 2).toUpperCase();
+        }
+        return (words[0][0] + words[words.length - 1][0]).toUpperCase();
+    }
+
+    // Helper function to generate consistent hash for color selection
+    hashCode(str) {
+        let hash = 0;
+        if (str.length === 0) return hash;
+        for (let i = 0; i < str.length; i++) {
+            const char = str.charCodeAt(i);
+            hash = ((hash << 5) - hash) + char;
+            hash = hash & hash; // Convert to 32-bit integer
+        }
+        return Math.abs(hash);
     }
 }
 

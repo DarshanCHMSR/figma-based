@@ -138,10 +138,11 @@ body {
     position: absolute;
     width: 390px;
     top: 112px;
-    bottom: 99px;
+    bottom: 90px;
     overflow-y: auto;
-    padding: 18px 24px;
+    padding: 18px 0 24px 0;
     background: #FFFFFF;
+    -webkit-overflow-scrolling: touch;
 }
 
 .date-separator {
@@ -159,15 +160,17 @@ body {
 .messages-list {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 8px;
+    padding-bottom: 20px;
 }
 
 /* Message Bubble Styles */
 .message-group {
     display: flex;
     align-items: flex-start;
-    gap: 4px;
-    margin-bottom: 12px;
+    gap: 8px;
+    margin-bottom: 16px;
+    padding: 0 16px;
 }
 
 .message-group.own {
@@ -176,101 +179,106 @@ body {
 }
 
 .message-group.own .message-bubble {
-    background: #A2190A;
+    background: linear-gradient(135deg, #A2190A 0%, #8B1508 100%);
     color: #FFFFFF;
-    border-radius: 6px 0px 0px 6px;
+    border-radius: 18px 18px 4px 18px;
     margin-right: 0;
-    margin-left: 15px;
+    margin-left: 0;
+    box-shadow: 0 2px 8px rgba(162, 25, 10, 0.3);
 }
 
 .message-group.own .message-bubble::before {
-    right: -15px;
-    left: auto;
-    border-left: 15px solid #A2190A;
-    border-right: none;
+    display: none;
 }
 
 .message-group.own .message-time {
     color: #FFFFFF;
+    opacity: 0.8;
 }
 
 .avatar {
-    width: 32px;
-    height: 32px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><circle cx="16" cy="16" r="16" fill="%23666668"/><circle cx="16" cy="12" r="5" fill="white"/><path d="M6 28c0-5.5 4.5-10 10-10s10 4.5 10 10" fill="white"/></svg>') center/cover;
-    border: 2px solid rgba(30, 30, 30, 0.1);
+    background: linear-gradient(135deg, #6B73FF 0%, #000DFF 100%);
+    border: 3px solid #FFFFFF;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    color: #FFFFFF;
+    text-transform: uppercase;
 }
 
 .message-bubble {
     position: relative;
-    background: #F2F2F7;
-    border-radius: 0px 6px 6px 0px;
-    padding: 4px 8px 4px 0px;
-    margin-left: 15px;
-    max-width: 287px;
-    min-height: 61px;
+    background: #F0F0F0;
+    border-radius: 18px 18px 18px 4px;
+    padding: 12px 16px;
+    margin-left: 0;
+    max-width: 280px;
+    min-height: auto;
     display: flex;
     align-items: center;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .message-bubble::before {
-    content: '';
-    position: absolute;
-    left: -15px;
-    top: 0;
-    width: 0;
-    height: 0;
-    border-right: 15px solid #F2F2F7;
-    border-top: 12px solid transparent;
-    border-bottom: 49px solid transparent;
+    display: none;
 }
 
 .message-content {
     display: flex;
     flex-direction: column;
     width: 100%;
-    padding: 8.5px 8px;
+    padding: 0;
 }
 
 .message-sender {
     font-family: 'Quicksand', sans-serif;
     font-weight: 700;
-    font-size: 14px;
-    line-height: 18px;
-    color: #2C2C2E;
-    margin-bottom: 4px;
+    font-size: 13px;
+    line-height: 16px;
+    color: #1C1C1E;
+    margin-bottom: 2px;
+    opacity: 0.7;
 }
 
 .message-body {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    gap: 8px;
+    gap: 12px;
 }
 
 .message-text {
-    font-family: 'Manrope', sans-serif;
+    font-family: 'SF Pro Text', -apple-system, BlinkMacSystemFont, sans-serif;
     font-weight: 400;
-    font-size: 14px;
+    font-size: 15px;
     line-height: 20px;
-    color: #2C2C2E;
+    color: #000000;
     flex: 1;
+    word-wrap: break-word;
 }
 
 .message-time {
-    font-family: 'Manrope', sans-serif;
+    font-family: 'SF Pro Text', -apple-system, BlinkMacSystemFont, sans-serif;
     font-weight: 400;
-    font-size: 12px;
-    line-height: 16px;
-    color: #666668;
+    font-size: 11px;
+    line-height: 13px;
+    color: #8E8E93;
     white-space: nowrap;
     margin-left: 8px;
+    align-self: flex-end;
 }
 
 .message-group.own .message-content {
-    padding: 8.5px 8px;
+    padding: 0;
 }
 
 .message-group.own .message-sender {
@@ -281,23 +289,26 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    gap: 8px;
+    gap: 12px;
 }
 
 .message-group.own .message-text {
     color: #FFFFFF;
+    font-weight: 400;
 }
 
 .message-group.own .message-time {
     color: #FFFFFF;
+    opacity: 0.8;
     display: flex;
     align-items: center;
-    gap: 4px;
+    gap: 6px;
+    font-size: 11px;
 }
 
 .read-receipt {
     width: 16px;
-    height: 8px;
+    height: 12px;
     position: relative;
 }
 
@@ -327,16 +338,17 @@ body {
 .input-area {
     position: absolute;
     width: 390px;
-    height: 99px;
+    height: 90px;
     left: 0;
     bottom: 0;
     background: #FFFFFF;
-    box-shadow: 0px -5px 6px rgba(75, 85, 99, 0.08);
+    box-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 24px;
+    padding: 20px;
     gap: 12px;
+    border-top: 1px solid #E5E5E7;
 }
 
 .input-container {
@@ -344,27 +356,29 @@ body {
     align-items: center;
     gap: 12px;
     flex: 1;
-    height: 51px;
-    padding: 0 16px;
-    border: 1px solid #D0D1DB;
-    border-radius: 100px;
-    background: #FFFFFF;
+    height: 48px;
+    padding: 0 20px;
+    border: 1px solid #E5E5E7;
+    border-radius: 24px;
+    background: #F2F2F7;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
 .message-input {
     flex: 1;
     border: none;
     outline: none;
-    font-family: 'Inter', sans-serif;
+    font-family: 'SF Pro Text', -apple-system, BlinkMacSystemFont, sans-serif;
     font-weight: 400;
-    font-size: 14px;
-    line-height: 17px;
-    color: #2C2D3A;
+    font-size: 16px;
+    line-height: 20px;
+    color: #000000;
     background: transparent;
 }
 
 .message-input::placeholder {
-    color: rgba(44, 45, 58, 0.3);
+    color: #8E8E93;
+    font-weight: 400;
 }
 
 .camera-button,
@@ -372,18 +386,25 @@ body {
     background: none;
     border: none;
     cursor: pointer;
-    width: 24px;
-    height: 24px;
+    width: 28px;
+    height: 28px;
     padding: 0;
     display: flex;
     align-items: center;
     justify-content: center;
+    border-radius: 50%;
+    transition: background-color 0.2s ease;
+}
+
+.camera-button:hover,
+.attachment-button:hover {
+    background-color: rgba(0, 0, 0, 0.1);
 }
 
 .send-button {
-    width: 44px;
-    height: 44px;
-    background: #A2190A;
+    width: 36px;
+    height: 36px;
+    background: linear-gradient(135deg, #A2190A 0%, #8B1508 100%);
     border: none;
     border-radius: 50%;
     cursor: pointer;
