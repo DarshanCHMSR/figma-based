@@ -1,109 +1,498 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - Fun Friday Group</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@700&family=Manrope:wght@400;500&family=Inter:wght@400&family=SF+Pro+Text:wght@600&display=swap" rel="stylesheet">
-    <style>
-        .login-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            background: linear-gradient(135deg, #A2190A 0%, #8A1508 100%);
-            padding: 20px;
-        }
+<!DOCTYPE html><!DOCTYPE html>
 
-        .login-card {
-            background: white;
-            border-radius: 20px;
-            padding: 40px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-            width: 100%;
-            max-width: 400px;
-        }
+<html lang="en"><html lang="en">
 
-        .login-header {
-            text-align: center;
-            margin-bottom: 30px;
-        }
+<head><head>
 
-        .login-header h1 {
-            font-family: 'Quicksand', sans-serif;
-            font-weight: 700;
-            font-size: 28px;
-            color: #A2190A;
-            margin-bottom: 10px;
-        }
+    <meta charset="UTF-8">    <meta charset="UTF-8">
 
-        .login-header p {
-            font-family: 'Manrope', sans-serif;
-            color: #666668;
-            font-size: 16px;
-        }
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        .form-group {
-            margin-bottom: 20px;
-        }
+    <title>Login - Fun Friday Group</title>    <title>Login - Fun Friday Group</title>
 
-        .form-group label {
-            display: block;
-            font-family: 'Manrope', sans-serif;
-            font-weight: 500;
-            margin-bottom: 8px;
-            color: #2C2C2E;
-        }
+    <link rel="stylesheet" href="styles.css">    <link rel="stylesheet" href="styles.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@700&family=Manrope:wght@400;500&family=Inter:wght@400&family=SF+Pro+Text:wght@600&display=swap" rel="stylesheet">    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@700&family=Manrope:wght@400;500&family=Inter:wght@400&family=SF+Pro+Text:wght@600&display=swap" rel="stylesheet">
+
+    <style>    <style>
+
+        .login-container {        .login-container {
+
+            display: flex;            display: flex;
+
+            justify-content: center;            justify-content: center;
+
+            align-items: center;            align-items: center;
+
+            min-height: 100vh;            min-height: 100vh;
+
+            background: linear-gradient(135deg, #A2190A 0%, #8A1508 100%);            background: linear-gradient(135deg, #A2190A 0%, #8A1508 100%);
+
+            padding: 20px;            padding: 20px;
+
+        }        }
+
+
+
+        .login-card {        .login-card {
+
+            background: white;            background: white;
+
+            border-radius: 20px;            border-radius: 20px;
+
+            padding: 40px;            padding: 40px;
+
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+
+            width: 100%;            width: 100%;
+
+            max-width: 400px;            max-width: 400px;
+
+        }        }
+
+
+
+        .login-header {        .login-header {
+
+            text-align: center;            text-align: center;
+
+            margin-bottom: 30px;            margin-bottom: 30px;
+
+        }        }
+
+
+
+        .login-header h1 {        .login-header h1 {
+
+            font-family: 'Quicksand', sans-serif;            font-family: 'Quicksand', sans-serif;
+
+            font-weight: 700;            font-weight: 700;
+
+            font-size: 28px;            font-size: 28px;
+
+            color: #A2190A;            color: #A2190A;
+
+            margin-bottom: 10px;            margin-bottom: 10px;
+
+        }        }
+
+
+
+        .login-header p {        .login-header p {
+
+            font-family: 'Manrope', sans-serif;            font-family: 'Manrope', sans-serif;
+
+            color: #666668;            color: #666668;
+
+            font-size: 16px;            font-size: 16px;
+
+        }        }
+
+
+
+        .form-group {        .form-group {
+
+            margin-bottom: 20px;            margin-bottom: 20px;
+
+        }        }
+
+
+
+        .form-group label {        .form-group label {
+
+            display: block;            display: block;
+
+            font-family: 'SF Pro Text', sans-serif;            font-family: 'SF Pro Text', sans-serif;
+
+            font-weight: 600;            font-weight: 600;
+
+            color: #333;            color: #333;
+
+            margin-bottom: 8px;            margin-bottom: 8px;
+
+            font-size: 14px;            font-size: 14px;
+
+        }        }
+
+
+
+        .form-group input {        .form-group input {
+
+            width: 100%;            width: 100%;
+
+            padding: 12px 16px;            padding: 12px 16px;
+
+            border: 2px solid #E8E8E8;            border: 2px solid #E8E8E8;
+
+            border-radius: 12px;            border-radius: 12px;
+
+            font-family: 'Inter', sans-serif;            font-family: 'Inter', sans-serif;
+
+            font-size: 16px;            font-size: 16px;
+
+            transition: border-color 0.2s ease;            transition: border-color 0.2s ease;
+
+            box-sizing: border-box;            box-sizing: border-box;
+
+        }        }
+
+
+
+        .form-group input:focus {        .form-group input:focus {
+
+            outline: none;            outline: none;
+
+            border-color: #A2190A;            border-color: #A2190A;
+
+        }        }
+
+
+
+        .auth-tabs {        .auth-tabs {
+
+            display: flex;            display: flex;
+
+            margin-bottom: 25px;            margin-bottom: 25px;
+
+            background: #F5F5F5;            background: #F5F5F5;
+
+            border-radius: 12px;            border-radius: 12px;
+
+            padding: 4px;            padding: 4px;
+
+        }        }
+
+
+
+        .auth-tab {        .auth-tab {
+
+            flex: 1;            flex: 1;
+
+            padding: 12px;            padding: 12px;
+
+            text-align: center;            text-align: center;
+
+            background: transparent;            background: transparent;
+
+            border: none;            border: none;
+
+            border-radius: 8px;            border-radius: 8px;
+
+            font-family: 'SF Pro Text', sans-serif;            font-family: 'SF Pro Text', sans-serif;
+
+            font-weight: 600;            font-weight: 600;
+
+            font-size: 14px;            font-size: 14px;
+
+            color: #666;            color: #666;
+
+            cursor: pointer;            cursor: pointer;
+
+            transition: all 0.2s ease;            transition: all 0.2s ease;
+
+        }        }
+
+
+
+        .auth-tab.active {        .auth-tab.active {
+
+            background: white;            background: white;
+
+            color: #A2190A;            color: #A2190A;
+
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+        }        }
+
+
+
+        .auth-form {        .auth-form {
+
+            display: none;            display: none;
+
+        }        }
+
+
+
+        .auth-form.active {        .auth-form.active {
+
+            display: block;            display: block;
+
+        }        }
+
+
+
+        .submit-button {        .submit-button {
+
+            width: 100%;            width: 100%;
+
+            padding: 14px;            padding: 14px;
+
+            background: linear-gradient(135deg, #A2190A 0%, #8A1508 100%);            background: linear-gradient(135deg, #A2190A 0%, #8A1508 100%);
+
+            color: white;            color: white;
+
+            border: none;            border: none;
+
+            border-radius: 12px;            border-radius: 12px;
+
+            font-family: 'SF Pro Text', sans-serif;            font-family: 'SF Pro Text', sans-serif;
+
+            font-weight: 600;            font-weight: 600;
+
+            font-size: 16px;            font-size: 16px;
+
+            cursor: pointer;            cursor: pointer;
+
+            transition: transform 0.2s ease, box-shadow 0.2s ease;            transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+        }        }
+
+
+
+        .submit-button:hover {        .submit-button:hover {
+
+            transform: translateY(-2px);            transform: translateY(-2px);
+
+            box-shadow: 0 8px 20px rgba(162, 25, 10, 0.3);            box-shadow: 0 8px 20px rgba(162, 25, 10, 0.3);
+
+        }        }
+
+
+
+        .submit-button:disabled {        .submit-button:disabled {
+
+            opacity: 0.6;            opacity: 0.6;
+
+            cursor: not-allowed;            cursor: not-allowed;
+
+            transform: none;            transform: none;
+
+            box-shadow: none;            box-shadow: none;
+
+        }        }
+
+
+
+        .auth-message {        .auth-message {
+
+            padding: 12px 16px;            padding: 12px 16px;
+
+            border-radius: 8px;            border-radius: 8px;
+
+            margin-bottom: 20px;            margin-bottom: 20px;
+
+            font-family: 'Manrope', sans-serif;            font-family: 'Manrope', sans-serif;
+
+            font-size: 14px;            font-size: 14px;
+
+            text-align: center;            text-align: center;
+
+        }        }
+
+
+
+        .auth-message.success {        .auth-message.success {
+
+            background-color: #d4edda;            background-color: #d4edda;
+
+            color: #155724;            color: #155724;
+
+            border: 1px solid #c3e6cb;            border: 1px solid #c3e6cb;
+
+        }        }
+
+
+
+        .auth-message.error {        .auth-message.error {
+
+            background-color: #f8d7da;            background-color: #f8d7da;
+
+            color: #721c24;            color: #721c24;
+
+            border: 1px solid #f5c6cb;            border: 1px solid #f5c6cb;
+
+        }        }
+
+
+
+        .auth-message.info {        .auth-message.info {
+
+            background-color: #d1ecf1;            background-color: #d1ecf1;
+
+            color: #0c5460;            color: #0c5460;
+
+            border: 1px solid #bee5eb;            border: 1px solid #bee5eb;
+
+        }        }
+
+
+
+        .forgot-password {        .forgot-password {
+
+            text-align: center;            text-align: center;
+
+            margin-top: 20px;            margin-top: 20px;
+
+        }        }
+
+
+
+        .forgot-password a {        .forgot-password a {
+
+            color: #A2190A;            color: #A2190A;
+
+            text-decoration: none;            text-decoration: none;
+
+            font-family: 'Manrope', sans-serif;            font-family: 'Manrope', sans-serif;
+
+            font-size: 14px;            font-size: 14px;
+
+        }        }
+
+
+
+        .forgot-password a:hover {        .forgot-password a:hover {
+
+            text-decoration: underline;            text-decoration: underline;
+
+        }        }
+
+
+
+        @media (max-width: 480px) {        @media (max-width: 480px) {
+
+            .login-card {            .login-card {
+
+                padding: 30px 20px;                padding: 30px 20px;
+
+                margin: 10px;                margin: 10px;
+
+            }            }
+
+
+
+            .login-header h1 {            .login-header h1 {
+
+                font-size: 24px;                font-size: 24px;
+
+            }            }
+
+        }        }
+
+    </style>
+
+</head>        .form-group label {
+
+<body>            display: block;
+
+    <div class="login-container">            font-family: 'Manrope', sans-serif;
+
+        <div class="login-card">            font-weight: 500;
+
+            <div class="login-header">            margin-bottom: 8px;
+
+                <h1>Welcome Back</h1>            color: #2C2C2E;
+
+                <p>Sign in to continue to Fun Friday Group</p>        }
+
+            </div>
 
         .form-group input {
-            width: 100%;
-            padding: 15px;
-            border: 2px solid #D0D1DB;
-            border-radius: 10px;
+
+            <div class="auth-tabs">            width: 100%;
+
+                <button id="loginTab" class="auth-tab active">Login</button>            padding: 15px;
+
+                <button id="registerTab" class="auth-tab">Register</button>            border: 2px solid #D0D1DB;
+
+            </div>            border-radius: 10px;
+
             font-family: 'Inter', sans-serif;
-            font-size: 16px;
-            transition: border-color 0.3s;
-            box-sizing: border-box;
-        }
 
-        .form-group input:focus {
-            outline: none;
-            border-color: #A2190A;
-        }
+            <!-- Login Form -->            font-size: 16px;
 
-        .login-button {
-            width: 100%;
-            background: #A2190A;
-            color: white;
-            border: none;
+            <form id="loginForm" class="auth-form active">            transition: border-color 0.3s;
+
+                <div class="form-group">            box-sizing: border-box;
+
+                    <label for="loginUsername">Username</label>        }
+
+                    <input type="text" id="loginUsername" name="username" required>
+
+                </div>        .form-group input:focus {
+
+                <div class="form-group">            outline: none;
+
+                    <label for="loginPassword">Password</label>            border-color: #A2190A;
+
+                    <input type="password" id="loginPassword" name="password" required>        }
+
+                </div>
+
+                <button type="submit" class="submit-button">Login</button>        .login-button {
+
+                <div class="forgot-password">            width: 100%;
+
+                    <a href="#">Forgot Password?</a>            background: #A2190A;
+
+                </div>            color: white;
+
+            </form>            border: none;
+
             padding: 15px;
-            border-radius: 10px;
-            font-family: 'Manrope', sans-serif;
-            font-weight: 500;
-            font-size: 16px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-            margin-bottom: 20px;
+
+            <!-- Register Form -->            border-radius: 10px;
+
+            <form id="registerForm" class="auth-form">            font-family: 'Manrope', sans-serif;
+
+                <div class="form-group">            font-weight: 500;
+
+                    <label for="registerUsername">Username</label>            font-size: 16px;
+
+                    <input type="text" id="registerUsername" name="username" required>            cursor: pointer;
+
+                </div>            transition: background-color 0.3s;
+
+                <div class="form-group">            margin-bottom: 20px;
+
+                    <label for="registerEmail">Email</label>        }
+
+                    <input type="email" id="registerEmail" name="email" required>
+
+                </div>        .login-button:hover {
+
+                <div class="form-group">            background: #8A1508;
+
+                    <label for="registerPassword">Password</label>        }
+
+                    <input type="password" id="registerPassword" name="password" required>
+
+                </div>        .login-button:disabled {
+
+                <div class="form-group">            background: #ccc;
+
+                    <label for="confirmPassword">Confirm Password</label>            cursor: not-allowed;
+
+                    <input type="password" id="confirmPassword" name="confirmPassword" required>        }
+
+                </div>
+
+                <button type="submit" class="submit-button">Register</button>        .toggle-form {
+
+            </form>            text-align: center;
+
+        </div>            font-family: 'Manrope', sans-serif;
+
+    </div>            color: #666668;
+
         }
 
-        .login-button:hover {
-            background: #8A1508;
-        }
+    <script src="login-vercel.js"></script>
 
-        .login-button:disabled {
-            background: #ccc;
-            cursor: not-allowed;
-        }
+</body>        .toggle-form button {
 
-        .toggle-form {
-            text-align: center;
-            font-family: 'Manrope', sans-serif;
-            color: #666668;
-        }
-
-        .toggle-form button {
-            background: none;
+</html>            background: none;
             border: none;
             color: #A2190A;
             font-weight: 500;

@@ -1,6 +1,6 @@
-# 🚀 Fun Friday Group Chat - Full Stack Application
+# Fun Friday Group Chat - Vercel Deployment
 
-A complete real-time chat application built with HTML, CSS, JavaScript, Node.js, Express, Socket.io, and MySQL.
+A modern, real-time chat application built from a Figma design and deployed on Vercel with serverless architecture.
 
 ## 📋 Prerequisites
 
